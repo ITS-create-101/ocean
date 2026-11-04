@@ -1,8 +1,16 @@
-# Sponsor Ocean — a sovereign, self-hosted AI specialist
+![Ocean — a sovereign, self-hosted AI specialist](docs/banner.png)
 
-**Ocean is a private, fully self-hosted AI system for high-trust technical work** — secure software
-engineering, authorized/defensive cybersecurity, and media generation — built to run entirely on
-hardware its owner controls, with **no data ever sent to a third-party cloud**.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="status">
+  <img src="https://img.shields.io/badge/self--hosted-yes-blue" alt="self-hosted">
+  <img src="https://img.shields.io/badge/privacy-offline-5fd0f0" alt="offline">
+  <img src="https://img.shields.io/badge/use-authorized%20%2F%20defensive-orange" alt="authorized">
+  <img src="https://img.shields.io/github/stars/ITS-create-101/ocean?style=social" alt="stars">
+</p>
+
+> **Ocean is a private, fully self-hosted AI system for high-trust technical work** — secure software
+> engineering, authorized/defensive cybersecurity, and media generation — built to run entirely on
+> hardware its owner controls, with **no data ever sent to a third-party cloud**.
 
 Most capable AI today lives behind someone else's API. For work that is sensitive by nature —
 security assessments under signed authorization, proprietary code, regulated data — that is a
@@ -14,26 +22,31 @@ private, and owned**.
 ## What Ocean does today
 Ocean is a **working system**, not a concept:
 
-- **Secure coding & code auditing** — writes and reviews code with a security-first lens, mapping
-  issues to recognized weakness and standards frameworks.
-- **Authorized, defensive cybersecurity** — assists with reconnaissance, analysis, hardening, and
-  remediation **only within an explicitly authorized scope**, with hard safety controls built in.
-- **Reverse engineering & analysis** — understands and triages binaries and applications for
-  defensive investigation.
+- **Secure coding & code auditing** — writes and reviews code with a security-first lens, mapping issues to recognized weakness and standards frameworks.
+- **Authorized, defensive cybersecurity** — assists with reconnaissance, analysis, hardening, and remediation **only within an explicitly authorized scope**, with hard safety controls built in.
+- **Reverse engineering & analysis** — understands and triages binaries and applications for defensive investigation.
 - **Media generation** — produces video and voice locally using permissively-licensed models.
-- **Continuous learning** — a nightly loop keeps Ocean current on new tools, techniques, and
-  research, and it can learn from other open models — all offline.
-- **Governed autonomy** — a tool-using agent operates under tiered permissions, a signed-scope
-  gate, sandbox isolation, and full audit logging. Nothing dangerous or out-of-scope runs.
+- **Continuous learning** — a nightly loop keeps Ocean current on new tools, techniques, and research — all offline.
+- **Governed autonomy** — a tool-using agent operates under tiered permissions, a signed-scope gate, sandbox isolation, and full audit logging.
 
-Every component is built on an **open-source, commercially-clean foundation** (permissive
-licenses throughout), so Ocean can be used for real commercial engagements without legal risk.
+```mermaid
+flowchart LR
+  U["Your prompt · code · authorized target"] --> O(("Ocean<br/>private · offline"))
+  O --> C["Secure coding & audit"]
+  O --> S["Authorized defensive security"]
+  O --> R["Reverse engineering"]
+  O --> M["Media generation"]
+  O -. nightly .-> L["Continuous learning"]
+  O --> G{{"Guardrails: authorized-scope · sandbox · audit log"}}
+```
 
 ## Why Ocean is different
 - **Private by design** — runs offline; your prompts, code, and findings never leave your machine.
 - **Sovereign & owned** — no subscriptions, no per-token metering, no vendor lock-in.
 - **Safety-first** — authorized-use-only, with guardrails that cannot be bypassed by a prompt.
 - **Always improving** — it learns every night instead of going stale between model releases.
+
+Every component is built on an **open-source, commercially-clean foundation** (permissive licenses throughout).
 
 ---
 
@@ -46,30 +59,25 @@ so a self-hosted system can rival cloud assistants on the hardest engineering an
 That step is bounded by one thing: **compute**. Training and serving models at that scale needs
 serious GPU hardware that an independent project cannot self-fund.
 
-## How you can help
+## Sponsor Ocean
 We're seeking a sponsor or partner in one (or more) of these forms:
 
-1. **Compute access** — time on GPU hardware (cloud credits or on-prem access) to train, fine-tune,
-   and compile Ocean's larger models.
-2. **Hardware grant / funding** — support to acquire a dedicated multi-GPU server so Ocean has a
-   permanent, always-on home for 24/7 serving and continuous learning.
-3. **Tool access** — licenses or access to professional tools that would strengthen Ocean's
-   capabilities.
+1. **Compute access** — time on GPU hardware (cloud credits or on-prem) to train, fine-tune, and compile Ocean's larger models.
+2. **Hardware grant / funding** — support to acquire a dedicated multi-GPU server for 24/7 serving and continuous learning.
+3. **Tool access** — licenses or access to professional tools that would strengthen Ocean.
 
-## What a sponsor receives
-- Recognition as a founding sponsor of the project.
-- Direct collaboration and visibility into progress and results.
-- Early access to capabilities as they mature.
-- The satisfaction of backing **private, sovereign AI** — an alternative to the cloud-only status quo.
+**A sponsor receives** recognition as a founding sponsor, direct collaboration and visibility into
+progress, early access to capabilities as they mature, and the satisfaction of backing **private,
+sovereign AI** — an alternative to the cloud-only status quo.
 
 ## What stays private
-To be clear and fair to any sponsor: this is a request for **compute, hardware, or tool access** —
-not a transfer of the project. Ocean's training data, model artifacts, and internal design remain
-private. Sponsors fund the capability; the engineering and know-how stay with the project.
+This is a request for **compute, hardware, or tool access** — not a transfer of the project.
+Ocean's training data, model artifacts, and internal design remain private. Sponsors fund the
+capability; the engineering and know-how stay with the project.
 
 ---
 
 ### Contact
 If you'd like to support Ocean, reach out: **islamrezk1@gmail.com** or **info@itsglobalhub.com**
 
-*Ocean is used strictly for authorized, lawful, and defensive purposes.*
+<sub>Ocean is used strictly for authorized, lawful, and defensive purposes.</sub>
