@@ -2,6 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/status-active-brightgreen" alt="status">
+  <img src="https://img.shields.io/badge/brain-ocean--v2-e0ad45" alt="ocean-v2">
   <img src="https://img.shields.io/badge/self--hosted-yes-blue" alt="self-hosted">
   <img src="https://img.shields.io/badge/privacy-offline-5fd0f0" alt="offline">
   <img src="https://img.shields.io/badge/use-authorized%20%2F%20defensive-orange" alt="authorized">
@@ -17,6 +18,9 @@ security assessments under signed authorization, proprietary code, regulated dat
 non-starter. Ocean exists to give that work a frontier-grade assistant that stays **on-premises,
 private, and owned**.
 
+> **Latest:** `ocean-v2` is trained, independently evaluated, and running on owned hardware.
+> See [the brain & benchmarks](#the-brain-ocean-v2) and the [changelog](CHANGELOG.md).
+
 ---
 
 ## What Ocean does today
@@ -24,7 +28,8 @@ Ocean is a **working system**, not a concept:
 
 - **Secure coding & code auditing** — writes and reviews code with a security-first lens, mapping issues to recognized weakness and standards frameworks.
 - **Authorized, defensive cybersecurity** — assists with reconnaissance, analysis, hardening, and remediation **only within an explicitly authorized scope**, with hard safety controls built in.
-- **Reverse engineering & analysis** — understands and triages binaries and applications for defensive investigation.
+- **Reverse engineering & analysis** — understands and triages binaries and applications for defensive investigation (REA + Ghidra).
+- **Deception & early-warning** — self-hosted canary tokens / honeypots that alert you, with source IP and geolocation, the moment bait on *your own* systems is touched. Detection only — nothing is ever placed on anyone else's machine.
 - **Media generation** — produces video and voice locally using permissively-licensed models.
 - **Continuous learning** — a nightly loop keeps Ocean current on new tools, techniques, and research — all offline.
 - **Governed autonomy** — a tool-using agent operates under tiered permissions, a signed-scope gate, sandbox isolation, and full audit logging.
@@ -39,6 +44,22 @@ flowchart LR
   O -. nightly .-> L["Continuous learning"]
   O --> G{{"Guardrails: authorized-scope · sandbox · audit log"}}
 ```
+
+## The brain: `ocean-v2`
+A fine-tune of **Qwen3-32B** (Apache-2.0), specialised for the work above while keeping broad
+general reasoning; merged to a portable **Q8_0 GGUF** and served locally.
+
+**Benchmarks** (0-shot, greedy; small-sample margins ±6–9%):
+
+| Benchmark | ocean-v2 |
+|---|---|
+| **MMLU** (57 subjects) | **82.9%** — on par with the base model |
+| **HumanEval** (pass@1) | **73.8%** |
+| **MBPP** (pass@1) | **72.0%** |
+| **GSM8K** | **72.0%** |
+| Defensive-security suite | core tests passing; offensive requests kept theoretical |
+
+Trained **and** evaluated for **under $20** of rented GPU compute. Full history in [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Why Ocean is different
 - **Private by design** — runs offline; your prompts, code, and findings never leave your machine.
